@@ -38,6 +38,11 @@
   
   <!--  Servlte으로 등록할 클래스의 패키지명 + 클래스명  -->
 	<servlet-class>edu.kh.servlet.controller.ExampleController1</servlet-class>
+	
+	
+	
+	
+	
 </servlet>
 
 <!-- 요청 주소를 처리할 servlet을 연결  -->
