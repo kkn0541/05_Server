@@ -71,9 +71,88 @@
 		<a href="/jstl/test"> jtsl 간단히 다뤄보기 </a>
 	</h1>
 	
+	<hr>
 	
+	<h1>
+	<a href="/book/list">책 목록 조회하기 </a>
+	</h1>
 	
+	<h1>forward와 redirect</h1>
 	
+	<h3>forward : 요청 위임</h3>
+	
+	<pre>
+		-클라이언트 요청을 받은 servlet / jsp 가 
+		직접 응답하는 것이 아닌 
+		다른 servlet /jsp 에 HttpServletRequest, HttpServletResponse
+		객체를 넘겨서(위임) 대신 응답하게 하는 것 
+		
+		-요청 위임 시 
+		RequestDispacher(요청 발송자)를 이용 
+		
+		-요청 위임할 ***jsp 파일 경로*** 작성 
+		
+		-응답화면(결과 페이지) 주소는 
+		처음 Servlet이 요청받은 주소 그대로 
+		
+	</pre>
 
+<form action="/fr/forward">
+   
+	forward 입력 1: <input type="text" name="forwardInput1">
+	<br>
+	forward 입력 2: <input type="text" name="forwardInput2">
+	<button>forward 확인하기</button>
+
+</form>
+
+
+
+
+<hr>
+<h3>redirect (재요청,다른 servlet으로 요청 )</h3>
+
+<pre>
+	-클라이언트의 요청을 받은 Servlet에서 
+	직접 응답하지 않고
+	다른 servlet 을 다시 요청하는 것 
+	
+	-보통 servlet 요청 처리후 
+	특정 jsp로 요청을 위임해 
+	결과 화면을 응답해 주는 것이 아닌
+	(요청 받은 servlet이 응답해줄 jsp가 없음 )
+	
+	다른 servlet을 다시 요청하여 
+	다른 servlet의 결과 화면을 응답해줌 
+	
+	
+	-redirect는 다시 요청 하는 것 !! 
+		-> 기존 req,resp 객체가 사라지고 
+		새로운 req , resp 객체가 생성된다. 
+		
+		->request scope 에 세팅된 값들이 모두 사라짐 
+		
+	-redirect는 응답화면의 주소가 
+	처음 요청한 servlet 주소가 아닌 
+	재요청한 servlet 주소로 변경된다. 
+	
+	-다른 servlet을 요청하기 위해서는 
+	"요청주소" 를 작성해야 한다. 
+	
+</pre>
+
+<form action="/fr/redirect">
+   
+	redirect 입력 1: <input type="text" name="redirectInput1">
+	<br>
+	redirect 입력 2: <input type="text" name="redirectInput2">
+	<button>redirect 확인하기</button>
+
+</form>
+
+
+
+
+	
 </body>
 </html>
